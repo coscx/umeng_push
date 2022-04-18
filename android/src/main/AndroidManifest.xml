@@ -24,4 +24,7 @@
         </activity>
 
     </application>
+    <queries>
+        <package android:name="com.auwx.umeng_analytics_with_push" />
+    </queries>
 </manifest>

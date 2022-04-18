@@ -26,21 +26,24 @@ class OfflineNotifyClickActivity : UmengNotifyClickActivity() {
         val mainIntent = Intent(Intent.ACTION_MAIN, null)
         mainIntent.addCategory(Intent.CATEGORY_LAUNCHER)
         mainIntent.setPackage(this.getPackageName())
-//        var mApps = getPackageManager().queryIntentActivities(mainIntent, 0)
-//        for (i in 0 until mApps!!.size()) {
-//            info = mApps!![i]
-//            val packageName: String = info.activityInfo.packageName
-//            val activityName: String = info.activityInfo.name
-//            val mComponentName = ComponentName(packageName, activityName)
-//            val newIntent = Intent()
-//            newIntent.setComponent(mComponentName)
-//            newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-//            val mExtras = Bundle()
-//            mExtras.putString("message", body)
-//            newIntent.putExtras(mExtras)
-//            startActivity(newIntent)
-//            finish()
-//        }
+        val packages  = getPackageManager()
+                .queryIntentActivities(mainIntent, 0)
+        if (!packages.isEmpty()) {
+            for (info in packages ) {
+
+                val packageName = info.activityInfo.packageName
+                val activityName = info.activityInfo.name
+                val mComponentName = ComponentName(packageName, activityName)
+                val newIntent = Intent()
+                newIntent.setComponent(mComponentName)
+                newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                val mExtras = Bundle()
+                mExtras.putString("message", body)
+                newIntent.putExtras(mExtras)
+                startActivity(newIntent)
+                finish()
+            }
+        }
     }
 
     companion object {
