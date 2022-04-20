@@ -10,11 +10,11 @@ FlutterEventSink _eventSink;
 @implementation UmengAnalyticsWithPushPlugin
 
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  methodChannel = [FlutterMethodChannel methodChannelWithName:@"umeng_analytics_with_push" binaryMessenger:[registrar messenger]];
+  methodChannel = [FlutterMethodChannel methodChannelWithName:@"com.auwx.plugins/umeng_analytics_with_push" binaryMessenger:[registrar messenger]];
   UmengAnalyticsWithPushPlugin* instance = [[UmengAnalyticsWithPushPlugin alloc] init];
   [registrar addMethodCallDelegate:instance channel:methodChannel];
 
-  eventChannel = [FlutterEventChannel eventChannelWithName:@"umeng_analytics_with_push/stream" binaryMessenger:[registrar messenger]];
+  eventChannel = [FlutterEventChannel eventChannelWithName:@"com.auwx.plugins/umeng_analytics_with_push/stream" binaryMessenger:[registrar messenger]];
   [eventChannel setStreamHandler:instance];
 }
 
