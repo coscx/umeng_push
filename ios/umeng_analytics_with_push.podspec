@@ -19,6 +19,7 @@ A new Flutter plugin.
   s.dependency 'UMCommon'
   s.dependency 'UMDevice'
   s.dependency 'UMPush'
+  s.dependency 'UMCCommonLog'
   s.static_framework = true
 
   # Flutter.framework does not contain a i386 slice.
