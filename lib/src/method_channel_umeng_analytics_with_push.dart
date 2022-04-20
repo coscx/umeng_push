@@ -17,8 +17,8 @@ class MethodChannelUmengAnalyticsWithPush
     return _channel.invokeMethod("initialize", {
       "device-type": type,
       "catch-uncaught-exceptions": catchUncaughtExceptions,
-      logEnabled :logEnabled,
-      pushEnabled:pushEnabled,
+      "logEnabled" :logEnabled,
+      "pushEnabled":pushEnabled,
     });
   }
 
