@@ -82,8 +82,7 @@ FlutterEventSink _eventSink;
   [MobClick endLogPageView:pageName];
 }
 - (void)initialize:(FlutterMethodCall *)call result:(FlutterResult)result {
-  NSString *tags = call.arguments[@"tags"];
-
+  result("initialize");
 }
 - (void)addTags:(FlutterMethodCall *)call result:(FlutterResult)result {
   NSString *tags = call.arguments[@"tags"];
