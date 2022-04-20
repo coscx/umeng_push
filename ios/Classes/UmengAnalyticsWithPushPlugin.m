@@ -31,7 +31,9 @@ FlutterEventSink _eventSink;
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
   if ([@"initUmeng" isEqualToString:call.method]) {
       [self initUmeng:call result:result];
-  } else if ([@"addTags" isEqualToString:call.method]) {
+  } else if ([@"initialize" isEqualToString:call.method]) {
+      [self initialize:call result:result];
+  }else if ([@"addTags" isEqualToString:call.method]) {
       [self addTags:call result:result];
   } else if ([@"deleteTags" isEqualToString:call.method]) {
       [self deleteTags:call result:result];
@@ -79,7 +81,10 @@ FlutterEventSink _eventSink;
   NSString* pageName = call.arguments[@"pageName"];
   [MobClick endLogPageView:pageName];
 }
+- (void)initialize:(FlutterMethodCall *)call result:(FlutterResult)result {
+  NSString *tags = call.arguments[@"tags"];
 
+}
 - (void)addTags:(FlutterMethodCall *)call result:(FlutterResult)result {
   NSString *tags = call.arguments[@"tags"];
   [UMessage addTags:tags response:^(id  _Nonnull responseObject, NSInteger remain, NSError * _Nonnull error) {
