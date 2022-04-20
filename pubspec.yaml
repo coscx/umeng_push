@@ -32,8 +32,8 @@ flutter:
       android:
         package: com.auwx.umeng_analytics_with_push
         pluginClass: UmengAnalyticsWithPushPlugin
-#      ios:
-#        pluginClass: UmengAnalyticsWithPushPlugin
+      ios:
+        pluginClass: UmengAnalyticsWithPushPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
