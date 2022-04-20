@@ -60,6 +60,8 @@ abstract class UmengAnalyticsWithPushPlatform extends PlatformInterface {
   Future<void> initialize({
     String? type,
     bool? catchUncaughtExceptions,
+    bool? logEnabled ,
+    bool? pushEnabled,
   });
 
   /// 统计事件

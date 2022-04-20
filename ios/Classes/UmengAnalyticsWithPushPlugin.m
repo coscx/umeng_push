@@ -82,6 +82,9 @@ FlutterEventSink _eventSink;
   [MobClick endLogPageView:pageName];
 }
 - (void)initialize:(FlutterMethodCall *)call result:(FlutterResult)result {
+  BOOL logEnabled = [call.arguments[@"logEnabled"] boolValue];
+  BOOL pushEnabled = [call.arguments[@"pushEnabled"] boolValue];
+  [UmengAnalyticsPushFlutterIos iosInit:logEnabled pushEnabled:pushEnabled];
   result(@"initialize");
 }
 - (void)addTags:(FlutterMethodCall *)call result:(FlutterResult)result {

@@ -10,10 +10,15 @@ class MethodChannelUmengAnalyticsWithPush
   Future<void> initialize({
     String? type,
     bool? catchUncaughtExceptions,
+    bool? logEnabled ,
+    bool? pushEnabled,
+
   }) {
     return _channel.invokeMethod("initialize", {
       "device-type": type,
       "catch-uncaught-exceptions": catchUncaughtExceptions,
+      logEnabled :logEnabled,
+      pushEnabled:pushEnabled,
     });
   }
 
