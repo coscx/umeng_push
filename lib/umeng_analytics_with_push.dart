@@ -27,7 +27,7 @@ class UmengAnalyticsWithPush {
   static Future<void> initialize({
     UmengDeviceType type = UmengDeviceType.phone,
     bool? catchUncaughtExceptions,
-    bool? logEnabled =false,
+    bool? logEnabled =true,
     bool? pushEnabled=true,
   }) {
     return UmengAnalyticsWithPushPlatform.instance.initialize(
