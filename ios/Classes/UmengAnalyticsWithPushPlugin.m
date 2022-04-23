@@ -76,12 +76,12 @@ FlutterEventSink _eventSink;
 }
 
 - (void)pageStart:(FlutterMethodCall*)call result:(FlutterResult)result {
-  NSString* pageName = [call.arguments NSString*];
+  NSString* pageName = call.arguments;
   [MobClick beginLogPageView:pageName];
 }
 
 - (void)pageEnd:(FlutterMethodCall*)call result:(FlutterResult)result {
-  NSString* pageName = [call.arguments  NSString*];
+  NSString* pageName = call.arguments ;
   [MobClick endLogPageView:pageName];
 }
 - (void)initialize:(FlutterMethodCall *)call result:(FlutterResult)result {
@@ -91,16 +91,16 @@ FlutterEventSink _eventSink;
   result(@"initialize");
 }
 - (void)addTags:(FlutterMethodCall *)call result:(FlutterResult)result {
-  NSString *tags = [call.arguments NSString*];
+  NSString *tags = call.arguments;
   [UMessage addTags:tags response:^(id  _Nonnull responseObject, NSInteger remain, NSError * _Nonnull error) {
   }];
 }
 - (void)getTags:(FlutterMethodCall *)call result:(FlutterResult)result {
-  [UMessage getTags response:^(id  _Nonnull responseObject, NSInteger remain, NSError * _Nonnull error) {
+  [UMessage getTags:^(id  _Nonnull responseObject, NSInteger remain, NSError * _Nonnull error) {
   }];
 }
 - (void)deleteTags:(FlutterMethodCall *)call result:(FlutterResult)result {
-  NSString *tags = [call.arguments NSString*];
+  NSString *tags = call.arguments;
   [UMessage deleteTags:tags response:^(id  _Nonnull responseObject, NSInteger remain, NSError * _Nonnull error) {
   }];
 }
